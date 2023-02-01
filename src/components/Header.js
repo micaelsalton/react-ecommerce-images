@@ -7,7 +7,6 @@ function Header(){
     const {cartItems, changeSearch} = useContext(Context)
     const c = cartItems.length > 0 ? "fill" : "line" 
     const [inputValue, setInputValue] = useState("")
-    console.log(inputValue)
 
     return (
         <header>
