@@ -3,12 +3,18 @@ import { createClient } from 'pexels';
 
 const client = createClient('SNviqBm4wY9alRVnChl1AyeZs167Vqd5C9ZfLEMwwcXuhaqKwgUlArxL')
 const Context = createContext()
-const query = 'sunset';
+
 
 function ContextProvider({children}){
 
     const [allPhotos, setAllPhotos] = useState([])
     const [cartItems, setCartItems ] = useState([])
+    const [search, setSearch] = useState("night")
+    const query = search;
+
+    function changeSearch(value){
+        setSearch(value)
+    }
 
     function addToCart(newItem){ 
         setCartItems(prev => (
@@ -36,7 +42,7 @@ function ContextProvider({children}){
         client.photos.search({ query, per_page: 15 }).then(photos => {
             setAllPhotos(photos.photos)
         });
-    },[])
+    },[search])
     console.log(allPhotos)
     
     return (
@@ -45,7 +51,8 @@ function ContextProvider({children}){
         toggleFavorite, 
         addToCart, 
         cartItems,
-        emptyCart, 
+        emptyCart,
+        changeSearch, 
         removeFromCart}}>
             {children}
         </Context.Provider>
