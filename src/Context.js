@@ -32,7 +32,6 @@ function ContextProvider({children}){
         
     }
     
-   
     useEffect(()=>{
         client.photos.search({ query, per_page: 15 }).then(photos => {
             setAllPhotos(photos.photos)
