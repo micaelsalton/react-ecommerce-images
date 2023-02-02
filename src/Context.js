@@ -27,7 +27,6 @@ function ContextProvider({children}){
     }
 
     function emptyCart(){
-        console.log("yeah")
         setCartItems([])
     }
 
