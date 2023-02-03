@@ -1,19 +1,12 @@
-import React, {useContext, useState} from "react"
+import React, { useState } from "react";
 import { Context } from "../Context"
-import Images from "../components/Images"
 
-function Photos(){
 
-    const {allPhotos, changeSearch} = useContext(Context)
+function SearchBar(){
     const [inputValue, setInputValue] = useState("")
-
-    const photos = allPhotos.map((image) => (
-        <Images key={image.id} img={image} />
-    ))
-    
+    const {changeSearch} = useContext(Context)
     return (
-        <main>
-           <div className="flex justify-right">
+        <div className="flex justify-right">
                 <input 
                     value={inputValue} 
                     placeholder="Busque aqui" 
@@ -22,11 +15,7 @@ function Photos(){
                 <button className="fonto-mono bg-red-600 rounded-lg m-2 px-4 py-2 text-gray-100 hover:opacity-70 text-sm" 
                         onClick={()=> changeSearch(inputValue)}>Encontre as melhores imagens</button>
                 </div>   
-            <div className="columns-2 md:columns-4 gap-2 p-2">
-                {photos}
-            </div>
-        </main>
     )
 }
 
-export default Photos
+export default SearchBar

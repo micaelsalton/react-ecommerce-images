@@ -42,7 +42,7 @@ function ContextProvider({children}){
             setAllPhotos(photos.photos)
         });
     },[search])
-    console.log(allPhotos)
+    
     
     return (
         <Context.Provider 

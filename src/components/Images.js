@@ -20,15 +20,15 @@ function Images({img}){
     }
     
     return (
-            <div  
-            
-                className="my-2 relative"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}>
-                <img className="rounded-md" src={img.src.original} />
-                {heartIcon()}
-                {cartIcon()}
-            </div>
+                <div  
+                    className="my-2 relative"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}>
+                    <img className="rounded-md" src={img.src.original} />
+                    {heartIcon()}
+                    {cartIcon()}
+                </div>
+           
     )
 }
 
