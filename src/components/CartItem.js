@@ -3,7 +3,7 @@ import { Context } from "../Context";
 
 function CartItem({img}){
     const [hovered, setHovered] = useState(false)
-    const iconClassName = hovered ? "ri-delete-bin-fill" : "ri-delete-bin-line"
+    const iconClassName = hovered ? "ri-delete-bin-fill cursor-pointer" : "ri-delete-bin-line cursor-pointer"
 
     const {removeFromCart} = useContext(Context)
 

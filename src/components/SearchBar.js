@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Context } from "../Context"
 
-
 function SearchBar(){
     const [inputValue, setInputValue] = useState("")
     const {changeSearch} = useContext(Context)
