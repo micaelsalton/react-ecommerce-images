@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Context } from "../Context"
 
 function SearchBar(){
     const [inputValue, setInputValue] = useState("")
     const {changeSearch} = useContext(Context)
+
     return (
-        <div className="flex justify-right">
+        <div className="flex justify-right mt-1">
                 <input 
                     value={inputValue} 
                     placeholder="Busque aqui" 
